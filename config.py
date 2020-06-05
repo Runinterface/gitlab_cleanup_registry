@@ -26,7 +26,7 @@ gitlab_url = "https://sys-urds.ofc.ru" # Дефотный урл gitlab
 name_regex_delete='tfs-.*' # Какие теги удаляем
 older_than='3month' # Если он старше этого времени
 
-# Логирование
+## Логирование
 log_file="/Users/runinterface/Desktop/autoclean-gr/clean_registry.log"
 
 
