@@ -24,7 +24,7 @@ def getIDRegistry(id_project):
     r = requests.get(project_id_url, headers=send_headers)
     for data in r.json():
         delete_url = project_id_url + str(data["id"]) + '/tags'
-        # delete_img(delete_url)
+        delete_img(delete_url)
     return()
 
 def delete_img(delete_url):
