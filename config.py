@@ -17,17 +17,17 @@ space = parser.parse_args()
 #####
 ##### Configurations file from autoclean gitlab docker registry.
 # Основная конфигурация
-print(space.token)
 
-send_headers = "{\"PRIVATE-TOKEN\":" + space.token + "}" # В зависимости чей токен представлен, те артифакты и будут зачищаться. 
-gitlab_url = "https://sys-urds.ofc.ru" # Дефотный урл gitlab
+send_headers = {}
+send_headers["PRIVATE-TOKEN"] = space.token  # В зависимости чей токен представлен, те артифакты и будут зачищаться. 
+gitlab_url = space.url # Дефотный урл gitlab
 
 # Параметры удаления
-name_regex_delete='tfs-.*' # Какие теги удаляем
-older_than='3month' # Если он старше этого времени
+name_regex_delete= space.older_than # Какие теги удаляем
+older_than= space.older_than # Если он старше этого времени
 
 ## Логирование
-log_file="/Users/runinterface/Desktop/autoclean-gr/clean_registry.log"
+log_file= space.log_path
 
 
 

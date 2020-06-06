@@ -1,20 +1,19 @@
-#!/usr/bin/env python
 import sys
 import requests
-import datetime
+from datetime import datetime
 import json
-import argparse
-from sys import argv
 
 # Configurations
 from config import *
 
-current_time = datetime.datetime.now()
-log = open(log_file, "a")
+current_time = datetime.now()
+log = open(log_file, "w")
 log.write(str('Начало процесса удаления: '+ str(current_time) + '\n' + '\n'))
 log.close()
 
 def main():
+    print(send_headers)
+    print(gitlab_url)
     r = requests.get(gitlab_url +'/api/v4/projects/', headers=send_headers)
     for data in r.json():
        getIDRegistry(data["id"])
@@ -25,7 +24,6 @@ def getIDRegistry(id_project):
     for data in r.json():
         delete_url = project_id_url + str(data["id"]) + '/tags'
         delete_img(delete_url)
-    return()
 
 def delete_img(delete_url):
     send_data = {'name_regex_delete':name_regex_delete, 'older_than': older_than}
@@ -48,9 +46,7 @@ def delete_img(delete_url):
         log = open(log_file, "a")
         log.write(str(log_txt_err))
         log.close()
-    return()
-
-main()
 
 
-
+if __name__ == "__main__":
+    main()
