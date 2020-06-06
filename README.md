@@ -1,18 +1,16 @@
 ## Скрипт автоотчиски Gitlab Docker Registry 
 
-## Настройки
+## Settings
 File: config.py
 
-send_headers = {"PRIVATE-TOKEN":"0000000s0s0s00s00"} # В зависимости чей токен представлен, те артифакты и будут зачищаться. 
-gitlab_url = "https://sys-urds.ofc.ru" # Дефотный урл gitlab
-
 # Delete Params
-name_regex_delete='tfs-.*' # Какие теги удаляем
+name_regex_delete='tfs-.*' # Какие теги удаляем 
 older_than='30d' # Если он старше этого времени
 
-# Log File
-log_file="/var/log/clean_registry.log"
+# Install
+pip3 install -r requirements.txt
 
 
-## Запуск
+## Start
 
+python3 autoclean.py --token 0000000000 --url https://sys-urds.ofc.ru  --log_path /var/log/autoclean.log --older_than  3moth --name_delete tfs-.* 
