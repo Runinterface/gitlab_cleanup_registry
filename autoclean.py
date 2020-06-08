@@ -7,7 +7,7 @@ import json
 from config import *
 
 current_time = datetime.now()
-log = open(log_file, "w")
+log = open(log_file, "a")
 log.write(str('Начало процесса удаления: '+ str(current_time) + '\n' + '\n'))
 log.close()
 
