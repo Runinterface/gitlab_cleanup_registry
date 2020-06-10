@@ -15,3 +15,6 @@ pip3 install -r requirements.txt
 ```
 python3 autoclean.py --token 0000000000 --url https://gitlab.com  --log_path /var/log/autoclean.log --older_than  3moth --name_delete tfs-.* 
 ```
+```
+gitlab-ctl registry-garbade-collect
+```
