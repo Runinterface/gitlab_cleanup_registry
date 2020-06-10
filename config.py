@@ -6,7 +6,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Config Parameters')
 parser.add_argument('--token', default="000000000000", type=str, help='Enter Gitlab Access Token (default: 0000000000)')
-parser.add_argument('--url', default="https://sys-urds.ofc.ru", type=str, help='Enter Gitlab Url (default: https://sys-urds.ofc.ru)')
+parser.add_argument('--url', default="https://gitlab.com", type=str, help='Enter Gitlab Url (default: https://gitlab.com)')
 parser.add_argument('--name_delete', default="tfs-.*", type=str, help='Parameter delete(default: tfs-.*)')
 parser.add_argument('--older_than', default="3month", type=str, help='Delete old (default: 3month)')
 parser.add_argument('--log_path', default="/var/log/clean_registry.log", type=str, help='Log Path(default: /var/log/clean_registry.log)')
